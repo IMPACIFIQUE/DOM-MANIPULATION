@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crude operation </title>
+<style>
+    body{
+        background-color: rgb(185, 182, 178);
+    }
+    p{
+        font-size: 200%;
+        text-transform: capitalizef;
+        margin-left: 40vh;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+    }
+    form{
+         background-color:rgb(188, 183, 175);
+         filter: drop-shadow(0 0 2vh rgb(255, 255, 255));
+     width: 60%;
+     height: 50vh;
+     padding: 4vh;
+     text-transform: capitalize;
+     margin-top: vh;
+     margin-left: 40vh;
+     border-radius: 1vh;
+     color: rgb(255, 255, 255);
+     text-shadow: 1px 1px 1px rgb(0, 0, 0);
+     font-size: 3.5vh;
+     z-index: -1;
+}
+button{
+    border: none;
+    background-color:rgb(155, 145, 145);
+    filter: drop-shadow(0 0 1vh rgb(214, 211, 211));
+    border: 1px solid rgb(255, 255, 255);
+    width: 30vh;
+    height: 5vh;
+    border-radius: 1vh;
+    margin-top: 5vh;
+    z-index: 1;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    font-size: 3vh;
+}
+.input{
+    width: 30%;
+    height: 4vh;
+    border-radius: 4px;
+    border: 2px solid rgb(155, 145, 145);
+    filter: drop-shadow(0 0 3px rgb(255, 255, 255));
+   
+
+}
+.one{
+    margin-left: 4%;
+}
+.three{
+    margin-left: 4%;
+}
+.four{
+    margin-left: 5%;
+}
+.six{
+    margin-left: 7%;
+}
+.sname{
+    margin-left: 1%;
+}
+.location{
+    margin-left: 1%;
+}
+.gender{
+    margin-left: 1%;
+}
+.table{
+    background-color: aliceblue;
+
+}
+#record{
+    background-color: rgb(185, 182, 178); 
+    width: 100vh;
+    height: 30vh;
+    margin-left: 20%;
+}
+h1{
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+</style>
+    
+</head>
+<body>
+
+    <div>
+           <p>user records</p>
+        <form >
+         
+
+
+<label>first name:</label>
+<input type="text" placeholder="enter your first name" class="input one" id="f_name" required>
+<label  class="sname">second name:</label>
+<input type="text" placeholder="enter your second name" class="input two" id="s_name" required><br><br>
+<label > user email:</label>
+<input type="text" placeholder="enter your email" class="input three" id="email" required>
+<label  class="location">location:</label>
+<input type="text" placeholder="enter your location" class="input four"  id="location" required><br><br>
+<label >phone number:</label>
+<input type="number" placeholder=" enter your phone number" class="input five" id="phone" required>
+<label  class="gender">gender:</label>
+<input type="text" placeholder=" enter your gender" class="input six" id="gender" required>
+
+<br><br>
+<button onclick="record()">save</button>
+        </form>
+    </div>
+
+    <div id="record">
+        <h1>Record</h1>
+    </div>
+
+    
+
+    <script>
+
+        
+ 
+
+    function record(){
+
+
+        let first_name = document.getElementById("f_name");
+        let second_name = document.getElementById("s_name"); 
+        let email = document.getElementById("email"); 
+        let location= document.getElementById("location"); 
+        let phone = document.getElementById("phone"); 
+        let gender = document.getElementById("gender"); 
+        let record = document.getElementById("record");
+        
+        if(!first_name.value || !second_name.value || !email.value || !location.value || !phone.value || !gender.value){
+        alert("All user information are required !")
+        }else{
+            let table = `
+            <br><br><br>
+            <table border="4px" class="table">
+                 <tr>
+                <th>${first_name.value}</th>;
+                 <th>${second_name.value}</th>
+                 <th>${email.value}</th>
+                 <th>${location.value}</th>
+                 <th>${phone.value}</th>
+                 <th>${gender.value}</th>
+                 </tr> 
+            </table>
+        `
+
+            record.innerHTML= table;
+
+        }
+    }
+
+
+    </script>
+
+    
+</body>
+</html>
