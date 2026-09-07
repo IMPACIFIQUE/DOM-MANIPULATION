@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>toodlist</title>
+</head>
+<body>
+    <div class="top">
+        
+    <div>
+         <h2>set day schedule</h2>
+         
+      
+     <input type="text"  name="txt" id="text" placeholder="enter the title of job"><br>
+     <input type="date"  id="dt">
+     <input type="time"  id="tm"><br>
+     <textarea name="descriptin" id="job"></textarea>
+     <br>
+
+     <button onclick="add()" id="sv">save the task</button>
+
+    </div>
+    </div>
+
+    <div class="list">
+        <h2>list of task to be accomplished</h2>
+        <table id="table">
+            <tr>
+                <th>number</th>
+                <th>title</th>
+                <th>description</th>
+                <th>time</th>
+            </tr>
+
+        </table>
+    </div>
+
+<script>
+
+let title=document.getElementById('text');
+let date=document.getElementById('dt')
+let time=document.getElementById('tm')
+let dsc=document.getElementById('job')
+let table=document.getElementById('table')
+
+let no=0
+
+
+function add (){
+    
+
+if (title.value==null||dsc.value==null||time.value==null||date.value==null){
+    alert("fill all")
+
+}else{
+
+  no++;
+       let tr=`
+           <tr>
+        <td >${no}</td>
+        <td>${title.value}</td>
+        <td>${dsc.value}</td>
+        <td>
+            <span>${date.value}</span>
+              <br/>
+            <span>${time.value}</span>
+        </td>
+      </tr>
+   `
+   table.innerHTML+=tr
+}
+
+
+   
+   }
+
+
+
+   
+
+
+   
+
+</script>
+</body>
+</html>
